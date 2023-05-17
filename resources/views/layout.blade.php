@@ -10,14 +10,14 @@
 </head>
 <body>
     <header class="bg-primary text-white p-3">
-        <h1>Gallery Site</h1>
+        <h1><a href="/" class="text-white">Gallery Site</a></h1>
     </header>
     <main>
 
         @yield('content')
 
     </main>
-    <footer class="footer bg-primary text-center p-2 text-white">
+    <footer class="footer bg-primary fixed-bottom text-center p-2 text-white">
         <p>gallery site</p>
     </footer>
 </body>

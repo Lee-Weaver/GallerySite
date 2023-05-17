@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ImageController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Image;
 
@@ -14,14 +15,16 @@ use App\Models\Image;
 |
 */
 
-Route::get('/', function () {
-    return view('images', [
-        'images' => Image::all()
-    ]);
-});
+Route::get('/', [ImageController::class, 'index']);
 
-Route::get('/images/{image}', function (Image $image) {
-    return view('image', [
-        'image' => $image
-    ]);
-});
+Route::get('/images/create', [ImageController::class, 'create']);
+
+Route::post('/images', [ImageController::class, 'store']);
+
+Route::get('/images/{image}/edit', [ImageController::class, 'edit']);
+
+Route::put('/images/{image}', [ImageController::class, 'update']);
+
+Route::delete('/images/{image}', [ImageController::class, 'delete']);
+
+Route::get('/images/{image}', [ImageController::class, 'show']);

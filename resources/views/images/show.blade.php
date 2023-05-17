@@ -7,4 +7,11 @@
     <p>{{$image->description}}</p>
     <p>by {{$image->artist}}</p>
 </div>
+
+<a class="btn btn-primary" href="/images/{{$image->id}}/edit">edit</a>
+<form action="/images/{{$image->id}}" method="POST">
+@csrf
+@method('DELETE')
+<button class="btn btn-secondary">delete</button>
+</form>
 @endsection
